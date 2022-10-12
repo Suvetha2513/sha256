@@ -1,0 +1,21 @@
+from cryptography.fernet import Fernet
+
+key = Fernet.generate_key()
+print("__________________________________________________________________________________________________________\n")
+#print(key)
+print("The Value Key : ",key.decode())
+
+
+fernet_key = Fernet(key)
+encrypted_data = fernet_key.encrypt(b" Python Trainees !")
+print("__________________________________________________________________________________________________________\n")
+#print(encrypted_data)
+print("After encryption : ", encrypted_data.decode())
+
+decrypted_data = fernet_key.decrypt(encrypted_data)
+print("__________________________________________________________________________________________________________\n")
+#print(decrypted_data)
+print("After decryption : ", decrypted_data.decode())
+print("__________________________________________________________________________________________________________")
+
+
